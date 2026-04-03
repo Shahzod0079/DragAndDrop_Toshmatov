@@ -23,11 +23,11 @@ namespace DragAndDrop_Toshmatov
 
         private void image_MouseUp(object sender, System.Windows.Input.MouseButtonEventArgs e)
         {
-
+            dispatcherTimer.Stop();
         }
-        private void Image_MouseUDown(object sender, System.Windows.Input.MouseButtonEventArgs e)
+        private void Image_MouseDown(object sender, System.Windows.Input.MouseButtonEventArgs e)
         {
-
+            dispatcherTimer.Start();
         }
     }
 }
