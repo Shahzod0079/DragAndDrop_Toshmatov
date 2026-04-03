@@ -1,4 +1,5 @@
 ﻿using System.Windows;
+using System.Windows.Input;
 using System.Windows.Threading;
 
 
@@ -17,7 +18,7 @@ namespace DragAndDrop_Toshmatov
         }
         private void DispatcherTimer_Tick(object sender, System.EventArgs e)
         {
-
+            image.Margin = new Thickness(Mouse.GetPosition(this).X - 25, Mouse.GetPosition(this).Y - 25, 0, 0);
         }
 
         private void image_MouseUp(object sender, System.Windows.Input.MouseButtonEventArgs e)
