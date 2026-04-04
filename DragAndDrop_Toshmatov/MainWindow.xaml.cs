@@ -1,4 +1,5 @@
 ﻿using System.Windows;
+using System.Windows.Controls;
 using System.Windows.Input;
 using System.Windows.Threading;
 
@@ -28,6 +29,14 @@ namespace DragAndDrop_Toshmatov
         private void Image_MouseDown(object sender, System.Windows.Input.MouseButtonEventArgs e)
         {
             dispatcherTimer.Start();
+        }
+        public void ShowMainContent()
+        {
+            frame.Content = null;
+        }
+        private void OpenCropPage(object sender, RoutedEventArgs e)
+        {
+            frame.Navigate(new CropPage());
         }
     }
 }

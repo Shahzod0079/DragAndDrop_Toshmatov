@@ -1,0 +1,44 @@
+﻿<Page x:Class="DragAndDrop_Toshmatov.CropPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      Title="Обрезка фото" Background="#2D2D2D">
+
+    <Grid Margin="20">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="Auto"/>
+        </Grid.ColumnDefinitions>
+
+        <Border Grid.Row="0" Grid.RowSpan="2" Grid.Column="0" 
+                BorderBrush="Gray" BorderThickness="1" Background="#1E1E1E" Margin="0,0,10,0">
+            <Canvas x:Name="canvas" Width="500" Height="400" Background="#1E1E1E"
+                    MouseLeftButtonDown="Canvas_MouseLeftButtonDown" MouseMove="Canvas_MouseMove"
+                    MouseLeftButtonUp="Canvas_MouseLeftButtonUp">
+                <Image x:Name="image" Stretch="Uniform" Width="500" Height="400"/>
+                <Border x:Name="cropRect"   BorderBrush="White" BorderThickness="2" Background="#80FFFFFF" Visibility="Collapsed"/>
+            </Canvas>
+        </Border>
+
+        <StackPanel Grid.Row="0" Grid.Column="1" Width="200" Margin="10,0,0,0">
+            <TextBlock Text="Размеры размер" Foreground="White" FontSize="14" Margin="0,0,0,10"/>
+            <TextBlock x:Name="originalSize" Text="318 x 350" Foreground="Gray" FontSize="12" Margin="0,0,0,15"/>
+
+            <TextBlock Text="В масштабе" Foreground="White" FontSize="14" Margin="0,0,0,10"/>
+            <TextBlock x:Name="scaleSize" Text="318 x 350" Foreground="Gray" FontSize="12" Margin="0,0,0,15"/>
+
+            <TextBlock Text="Получится на выходе" Foreground="White" FontSize="14" Margin="0,0,0,10"/>
+            <TextBlock x:Name="outputSize" Text="0 x 0" Foreground="Yellow" FontSize="12" Margin="0,0,0,20"/>
+        </StackPanel>
+
+        <StackPanel Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,20,0,0">
+            <Button Click="ClearCrop" Content="ОЧИСТИТЬ"  Width="100"  Height="35" Margin="10" Background="#FF9C00" Foreground="White"/>
+            <Button Click="CropImage" Content="ОБРЕЗАТЬ" Width="100" Height="35" Margin="10" Background="#2DD700" Foreground="White"/>
+            <Button Click="BackToMain" Content="НАЗАД" Width="100" Height="35" Margin="10" Background="#D62F1B" Foreground="White"/>
+        </StackPanel>
+    </Grid>
+</Page>
