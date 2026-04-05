@@ -2,14 +2,10 @@
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         Title="Inventory" Height="550" Width="450"
-        Background="#2b1a12"
-        WindowStyle="None"
-        AllowsTransparency="True">
-
+        Background="#2b1a12" WindowStyle="None" AllowsTransparency="True">
     <Grid>
         <Border Background="#2b1a12" CornerRadius="10">
             <Grid Margin="10">
-
                 <Grid.RowDefinitions>
                     <RowDefinition Height="Auto"/>
                     <RowDefinition Height="Auto"/>
@@ -23,148 +19,161 @@
                         <ColumnDefinition Width="*"/>
                         <ColumnDefinition Width="Auto"/>
                     </Grid.ColumnDefinitions>
-
-                    <TextBlock Grid.Column="0" Text="ИНВЕНТАРЬ" Foreground="White" FontSize="20" 
-                               FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-
-                    <Button Grid.Column="1" Content="✕" Foreground="White" Background="Transparent" 
-                            BorderThickness="0" FontSize="18" Cursor="Hand" Click="CloseWindow" Width="30"/>
+                    <TextBlock Grid.Column="0" Text="ИНВЕНТАРЬ" Foreground="White" FontSize="20" FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    <Button Grid.Column="1" Content="✕" Foreground="White" Background="Transparent" BorderThickness="0" FontSize="18" Cursor="Hand" Click="CloseWindow" Width="30"/>
                 </Grid>
 
                 <StackPanel Grid.Row="1" Orientation="Horizontal" Margin="70,15,40,10">
-                    <Border Background="#3a2418"  BorderBrush="Orange" BorderThickness="1" Padding="10,5" Margin="5" Width="184">
+                    <Border Background="#3a2418" BorderBrush="Orange" BorderThickness="1" Padding="10,5" Margin="5" Width="184">
                         <StackPanel Orientation="Horizontal">
-                            <TextBlock Text="14,633,098" Foreground="White" Margin="5,0"/>
+                            <TextBlock Text="14,633,098" Foreground="Yellow" Margin="5,0"/>
                         </StackPanel>
                     </Border>
-                    <Border  BorderBrush="Orange" BorderThickness="1" Background="#3a2418"  Padding="10,5" Margin="5" Width="107">
+                    <Border BorderBrush="Orange" BorderThickness="1" Background="#3a2418" Padding="10,5" Margin="5" Width="107">
                         <StackPanel Orientation="Horizontal">
-                            <TextBlock Text="56/80" Foreground="White" Margin="5,0"/>
+                            <TextBlock Text="56/80" Foreground="Red" Margin="5,0"/>
                         </StackPanel>
                     </Border>
                 </StackPanel>
 
-                <Border Grid.Row="2" Width="350" Height="280"
-                        Background="#3a2418"
-                        BorderBrush="Orange"
-                        BorderThickness="2"
-                        CornerRadius="6"
-                        HorizontalAlignment="Center">
-
+                <Border Grid.Row="2" Width="350" Height="280" Background="#3a2418" BorderBrush="Orange" BorderThickness="2" CornerRadius="6" HorizontalAlignment="Center">
                     <UniformGrid Rows="4" Columns="5" Margin="5">
-                        <Grid>
-                            <Border BorderBrush="Orange" BorderThickness="1" Margin="2" Background="#3a2418"/>
-                            <Image Source="Image\mm.png" Width="40" Height="40"/>
+                        <Grid Background="Transparent">
+                            <Border BorderBrush="Orange" BorderThickness="1" Margin="2" Background="#3a2418" MouseLeftButtonDown="Item_MouseLeftButtonDown" MouseMove="Item_MouseMove" AllowDrop="True" DragEnter="Item_DragEnter" DragLeave="Item_DragLeave" Drop="Item_Drop">
+                                <Image Source="/Image/mm.png" Width="40" Height="40"/>
+                            </Border>
                         </Grid>
-                        <Grid>
-                            <Border BorderBrush="Orange" BorderThickness="1" Margin="2" Background="#3a2418"/>
-                            <Image Source="Image\potionn.png" Width="65" Margin="1,2,1,2"/>
+                        <Grid Background="Transparent">
+                            <Border BorderBrush="Orange" BorderThickness="1" Margin="2" Background="#3a2418" MouseLeftButtonDown="Item_MouseLeftButtonDown" MouseMove="Item_MouseMove" AllowDrop="True" DragEnter="Item_DragEnter" DragLeave="Item_DragLeave" Drop="Item_Drop">
+                                <Image Source="/Image/potionn.png" Width="65" Margin="1,2,1,2"/>
+                            </Border>
                         </Grid>
-                        <Grid>
-                            <Border BorderBrush="Orange" BorderThickness="1" Margin="2" Background="#3a2418"/>
-                            <Image Source="Image\shield1.png" Width="55" Margin="1,2,1,2"/>
+                        <Grid Background="Transparent">
+                            <Border BorderBrush="Orange" BorderThickness="1" Margin="2" Background="#3a2418" MouseLeftButtonDown="Item_MouseLeftButtonDown" MouseMove="Item_MouseMove" AllowDrop="True" DragEnter="Item_DragEnter" DragLeave="Item_DragLeave" Drop="Item_Drop">
+                                <Image Source="/Image/shield1.png" Width="55" Margin="1,2,1,2"/>
+                            </Border>
                         </Grid>
-                        <Grid>
-                            <Border BorderBrush="Orange" BorderThickness="1" Margin="2" Background="#3a2418"/>
-                            <Image Source="Image\helmet.png" Width="60" Height="60"/>
+                        <Grid Background="Transparent">
+                            <Border BorderBrush="Orange" BorderThickness="1" Margin="2" Background="#3a2418" MouseLeftButtonDown="Item_MouseLeftButtonDown" MouseMove="Item_MouseMove" AllowDrop="True" DragEnter="Item_DragEnter" DragLeave="Item_DragLeave" Drop="Item_Drop">
+                                <Image Source="/Image/helmet.png" Width="60" Height="60"/>
+                            </Border>
                         </Grid>
-                        <Grid>
-                            <Border BorderBrush="Orange" BorderThickness="1" Margin="2" Background="#3a2418"/>
-                            <Image Source="Image\ring.png" Width="40" Height="40"/>
-                        </Grid>
-
-                        <Grid>
-                            <Border BorderBrush="Orange" BorderThickness="1" Margin="2" Background="#3a2418"/>
-                            <Image Source="Image\scroll.png" Width="40" Height="40"/>
-                        </Grid>
-                        <Grid>
-                            <Border BorderBrush="Orange" BorderThickness="1" Margin="2" Background="#3a2418"/>
-                            <Image Source="Image\key.png" Width="40" Height="40"/>
-                        </Grid>
-                        <Grid>
-                            <Border BorderBrush="Orange" BorderThickness="1" Margin="2" Background="#3a2418"/>
-                            <Image Source="Image\mm.png" Width="40" Height="40"/>
-                        </Grid>
-                        <Grid>
-                            <Border BorderBrush="Orange" BorderThickness="1" Margin="2" Background="#3a2418"/>
-                            <Image Source="/Image/potionn.png" Width="65" Margin="1,2,1,2"/>
-                        </Grid>
-                        <Grid>
-                            <Border BorderBrush="Orange" BorderThickness="1" Margin="2" Background="#3a2418"/>
-                            <Image Source="/Image/shield1.png" Width="55" Margin="1,2,1,2"/>
+                        <Grid Background="Transparent">
+                            <Border BorderBrush="Orange" BorderThickness="1" Margin="2" Background="#3a2418" MouseLeftButtonDown="Item_MouseLeftButtonDown" MouseMove="Item_MouseMove" AllowDrop="True" DragEnter="Item_DragEnter" DragLeave="Item_DragLeave" Drop="Item_Drop">
+                                <Image Source="/Image/ring.png" Width="40" Height="40"/>
+                            </Border>
                         </Grid>
 
-                        <Grid>
-                            <Border BorderBrush="Orange" BorderThickness="1" Margin="2" Background="#3a2418"/>
-                            <Image Source="/Image/shield1.png" Width="55" Margin="1,2,1,2"/>
+                        <Grid Background="Transparent">
+                            <Border BorderBrush="Orange" BorderThickness="1" Margin="2" Background="#3a2418" MouseLeftButtonDown="Item_MouseLeftButtonDown" MouseMove="Item_MouseMove" AllowDrop="True" DragEnter="Item_DragEnter" DragLeave="Item_DragLeave" Drop="Item_Drop">
+                                <Image Source="/Image/scroll.png" Width="40" Height="40"/>
+                            </Border>
                         </Grid>
-                        <Grid>
-                            <Border BorderBrush="Orange" BorderThickness="1" Margin="2" Background="#3a2418"/>
-                            <Image Source="/Image/ring.png" Width="40" Height="40" Margin="14,13,14,13"/>
+                        <Grid Background="Transparent">
+                            <Border BorderBrush="Orange" BorderThickness="1" Margin="2" Background="#3a2418" MouseLeftButtonDown="Item_MouseLeftButtonDown" MouseMove="Item_MouseMove" AllowDrop="True" DragEnter="Item_DragEnter" DragLeave="Item_DragLeave" Drop="Item_Drop">
+                                <Image Source="/Image/key.png" Width="40" Height="40"/>
+                            </Border>
                         </Grid>
-                        <Grid>
-                            <Border BorderBrush="Orange" BorderThickness="1" Margin="2" Background="#3a2418"/>
-                            <Image Source="/Image/scroll.png" Width="40" Height="40" Margin="14,13,14,13"/>
+                        <Grid Background="Transparent">
+                            <Border BorderBrush="Orange" BorderThickness="1" Margin="2" Background="#3a2418" MouseLeftButtonDown="Item_MouseLeftButtonDown" MouseMove="Item_MouseMove" AllowDrop="True" DragEnter="Item_DragEnter" DragLeave="Item_DragLeave" Drop="Item_Drop">
+                                <Image Source="/Image/mm.png" Width="40" Height="40"/>
+                            </Border>
                         </Grid>
-                        <Grid>
-                            <Border BorderBrush="Orange" BorderThickness="1" Margin="2" Background="#3a2418"/>
-                            <Image Source="/Image/key.png" Width="40" Height="40" Margin="14,13,14,13"/>
+                        <Grid Background="Transparent">
+                            <Border BorderBrush="Orange" BorderThickness="1" Margin="2" Background="#3a2418" MouseLeftButtonDown="Item_MouseLeftButtonDown" MouseMove="Item_MouseMove" AllowDrop="True" DragEnter="Item_DragEnter" DragLeave="Item_DragLeave" Drop="Item_Drop">
+                                <Image Source="/Image/potionn.png" Width="65" Margin="1,2,1,2"/>
+                            </Border>
                         </Grid>
-                        <Grid>
-                            <Border BorderBrush="Orange" BorderThickness="1" Margin="2" Background="#3a2418"/>
-                            <Image Source="/Image/mm.png" Width="40" Height="40" Margin="14,13,14,13"/>
+                        <Grid Background="Transparent">
+                            <Border BorderBrush="Orange" BorderThickness="1" Margin="2" Background="#3a2418" MouseLeftButtonDown="Item_MouseLeftButtonDown" MouseMove="Item_MouseMove" AllowDrop="True" DragEnter="Item_DragEnter" DragLeave="Item_DragLeave" Drop="Item_Drop">
+                                <Image Source="/Image/shield1.png" Width="55" Margin="1,2,1,2"/>
+                            </Border>
                         </Grid>
 
-                        <Grid>
-                            <Border BorderBrush="Orange" BorderThickness="1" Margin="2" Background="#3a2418"/>
-                            <Image Source="/Image/helmet.png" Width="60" Height="60" Margin="4,3,4,3"/>
+                        <Grid Background="Transparent">
+                            <Border BorderBrush="Orange" BorderThickness="1" Margin="2" Background="#3a2418" MouseLeftButtonDown="Item_MouseLeftButtonDown" MouseMove="Item_MouseMove" AllowDrop="True" DragEnter="Item_DragEnter" DragLeave="Item_DragLeave" Drop="Item_Drop">
+                                <Image Source="/Image/shield1.png" Width="55" Margin="1,2,1,2"/>
+                            </Border>
                         </Grid>
-                        <Grid>
-                            <Border BorderBrush="Orange" BorderThickness="1" Margin="2" Background="#3a2418"/>
-                            <Image Source="/Image/key.png" Width="40" Height="40" Margin="14,13,13,13"/>
+                        <Grid Background="Transparent">
+                            <Border BorderBrush="Orange" BorderThickness="1" Margin="2" Background="#3a2418" MouseLeftButtonDown="Item_MouseLeftButtonDown" MouseMove="Item_MouseMove" AllowDrop="True" DragEnter="Item_DragEnter" DragLeave="Item_DragLeave" Drop="Item_Drop">
+                                <Image Source="/Image/ring.png" Width="40" Height="40"/>
+                            </Border>
                         </Grid>
-                        <Grid>
-                            <Border BorderBrush="Orange" BorderThickness="1" Margin="2" Background="#3a2418"/>
-                            <Image Source="/Image/mm.png" Width="40" Height="40" Margin="14,13,13,13"/>
+                        <Grid Background="Transparent">
+                            <Border BorderBrush="Orange" BorderThickness="1" Margin="2" Background="#3a2418" MouseLeftButtonDown="Item_MouseLeftButtonDown" MouseMove="Item_MouseMove" AllowDrop="True" DragEnter="Item_DragEnter" DragLeave="Item_DragLeave" Drop="Item_Drop">
+                                <Image Source="/Image/scroll.png" Width="40" Height="40"/>
+                            </Border>
                         </Grid>
-                        <Grid>
-                            <Border BorderBrush="Orange" BorderThickness="1" Margin="2" Background="#3a2418"/>
-                            <Image Source="/Image/helmet.png" Width="60" Height="60" Margin="4,3,4,3"/>
+                        <Grid Background="Transparent">
+                            <Border BorderBrush="Orange" BorderThickness="1" Margin="2" Background="#3a2418" MouseLeftButtonDown="Item_MouseLeftButtonDown" MouseMove="Item_MouseMove" AllowDrop="True" DragEnter="Item_DragEnter" DragLeave="Item_DragLeave" Drop="Item_Drop">
+                                <Image Source="/Image/key.png" Width="40" Height="40"/>
+                            </Border>
                         </Grid>
-                        <Grid>
-                            <Border BorderBrush="Orange" BorderThickness="1" Margin="2" Background="#3a2418"/>
-                            <Image Source="/Image/shield1.png" Width="55" Margin="1,2,1,2"/>
+                        <Grid Background="Transparent">
+                            <Border BorderBrush="Orange" BorderThickness="1" Margin="2" Background="#3a2418" MouseLeftButtonDown="Item_MouseLeftButtonDown" MouseMove="Item_MouseMove" AllowDrop="True" DragEnter="Item_DragEnter" DragLeave="Item_DragLeave" Drop="Item_Drop">
+                                <Image Source="/Image/mm.png" Width="40" Height="40"/>
+                            </Border>
+                        </Grid>
+
+                        <Grid Background="Transparent">
+                            <Border BorderBrush="Orange" BorderThickness="1" Margin="2" Background="#3a2418" MouseLeftButtonDown="Item_MouseLeftButtonDown" MouseMove="Item_MouseMove" AllowDrop="True" DragEnter="Item_DragEnter" DragLeave="Item_DragLeave" Drop="Item_Drop">
+                                <Image Source="/Image/helmet.png" Width="60" Height="60"/>
+                            </Border>
+                        </Grid>
+                        <Grid Background="Transparent">
+                            <Border BorderBrush="Orange" BorderThickness="1" Margin="2" Background="#3a2418" MouseLeftButtonDown="Item_MouseLeftButtonDown" MouseMove="Item_MouseMove" AllowDrop="True" DragEnter="Item_DragEnter" DragLeave="Item_DragLeave" Drop="Item_Drop">
+                                <Image Source="/Image/key.png" Width="40" Height="40"/>
+                            </Border>
+                        </Grid>
+                        <Grid Background="Transparent">
+                            <Border BorderBrush="Orange" BorderThickness="1" Margin="2" Background="#3a2418" MouseLeftButtonDown="Item_MouseLeftButtonDown" MouseMove="Item_MouseMove" AllowDrop="True" DragEnter="Item_DragEnter" DragLeave="Item_DragLeave" Drop="Item_Drop">
+                                <Image Source="/Image/mm.png" Width="40" Height="40"/>
+                            </Border>
+                        </Grid>
+                        <Grid Background="Transparent">
+                            <Border BorderBrush="Orange" BorderThickness="1" Margin="2" Background="#3a2418" MouseLeftButtonDown="Item_MouseLeftButtonDown" MouseMove="Item_MouseMove" AllowDrop="True" DragEnter="Item_DragEnter" DragLeave="Item_DragLeave" Drop="Item_Drop">
+                                <Image Source="/Image/helmet.png" Width="60" Height="60"/>
+                            </Border>
+                        </Grid>
+                        <Grid Background="Transparent">
+                            <Border BorderBrush="Orange" BorderThickness="1" Margin="2" Background="#3a2418" MouseLeftButtonDown="Item_MouseLeftButtonDown" MouseMove="Item_MouseMove" AllowDrop="True" DragEnter="Item_DragEnter" DragLeave="Item_DragLeave" Drop="Item_Drop">
+
+                            </Border>
                         </Grid>
                     </UniformGrid>
                 </Border>
 
                 <UniformGrid Grid.Row="3" Rows="1" Columns="5" Width="338" HorizontalAlignment="Center" Margin="0,10,0,80" Grid.RowSpan="2">
-                    <Grid>
-                        <Border BorderBrush="Orange" BorderThickness="1" Margin="2" Background="#3a2418"/>
-                        <Image Source="/Image/helmet.png" Width="60" Height="60" Margin="4,3,4,4"/>
+                    <Grid Background="Transparent">
+                        <Border BorderBrush="Orange" BorderThickness="1" Margin="2" Background="#3a2418" MouseLeftButtonDown="Item_MouseLeftButtonDown" MouseMove="Item_MouseMove" AllowDrop="True" DragEnter="Item_DragEnter" DragLeave="Item_DragLeave" Drop="Item_Drop">
+                            <Image Source="/Image/helmet.png" Width="60" Height="60"/>
+                        </Border>
                     </Grid>
-                    <Grid>
-                        <Border BorderBrush="Orange" BorderThickness="1" Margin="2" Background="#3a2418"/>
-                        <Image Source="/Image/helmet.png" Width="60" Height="60" Margin="4,3,4,4"/>
+                    <Grid Background="Transparent">
+                        <Border BorderBrush="Orange" BorderThickness="1" Margin="2" Background="#3a2418" MouseLeftButtonDown="Item_MouseLeftButtonDown" MouseMove="Item_MouseMove" AllowDrop="True" DragEnter="Item_DragEnter" DragLeave="Item_DragLeave" Drop="Item_Drop">
+                            <Image Source="/Image/helmet.png" Width="60" Height="60"/>
+                        </Border>
                     </Grid>
-                    <Grid>
-                        <Border BorderBrush="Orange" BorderThickness="1" Margin="2" Background="#3a2418"/>
-                        <Image Source="/Image/helmet.png" Width="60" Height="60" Margin="4,3,4,4"/>
+                    <Grid Background="Transparent">
+                        <Border BorderBrush="Orange" BorderThickness="1" Margin="2" Background="#3a2418" MouseLeftButtonDown="Item_MouseLeftButtonDown" MouseMove="Item_MouseMove" AllowDrop="True" DragEnter="Item_DragEnter" DragLeave="Item_DragLeave" Drop="Item_Drop">
+                            <Image Source="/Image/helmet.png" Width="60" Height="60"/>
+                        </Border>
                     </Grid>
-                    <Grid>
-                        <Border BorderBrush="Orange" BorderThickness="1" Margin="2" Background="#3a2418"/>
-                        <Image Source="/Image/key.png" Width="40" Height="40" Margin="14,13,13,14"/>
+                    <Grid Background="Transparent">
+                        <Border BorderBrush="Orange" BorderThickness="1" Margin="2" Background="#3a2418" MouseLeftButtonDown="Item_MouseLeftButtonDown" MouseMove="Item_MouseMove" AllowDrop="True" DragEnter="Item_DragEnter" DragLeave="Item_DragLeave" Drop="Item_Drop">
+                            <Image Source="/Image/key.png" Width="40" Height="40"/>
+                        </Border>
                     </Grid>
-                    <Grid>
-                        <Border BorderBrush="Orange" BorderThickness="1" Margin="2" Background="#3a2418"/>
-                        <Image Source="/Image/key.png" Width="40" Height="40" Margin="14,13,13,14"/>
+                    <Grid Background="Transparent">
+                        <Border BorderBrush="Orange" BorderThickness="1" Margin="2" Background="#3a2418" MouseLeftButtonDown="Item_MouseLeftButtonDown" MouseMove="Item_MouseMove" AllowDrop="True" DragEnter="Item_DragEnter" DragLeave="Item_DragLeave" Drop="Item_Drop">
+                            <Image Source="/Image/key.png" Width="40" Height="40"/>
+                        </Border>
                     </Grid>
                 </UniformGrid>
 
-                <Button Grid.Row="4" Content="НАЗАД" Click="BackToMain" Height="35" Width="100" 
-                        HorizontalAlignment="Left" Margin="156,106,0,19" Background="#D62F1B" Foreground="White"/>
-                <Image Source="Image\goldd.png" Height="30" Width="30" Margin="40,20,365,16" Grid.Row="1" />
-
+                <Button Grid.Row="4" Content="НАЗАД" Click="BackToMain" Height="35" Width="100" HorizontalAlignment="Left" Margin="156,106,0,19" Background="#D62F1B" Foreground="White"/>
+                <Image Source="/Image/goldd.png" Height="30" Width="30" Margin="40,20,365,16" Grid.Row="1"/>
             </Grid>
         </Border>
     </Grid>

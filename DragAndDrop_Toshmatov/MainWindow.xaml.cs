@@ -38,5 +38,10 @@ namespace DragAndDrop_Toshmatov
         {
             frame.Navigate(new CropPage());
         }
+        private void OpenInventory(object sender, RoutedEventArgs e)
+        {
+            Inventory inv = new Inventory();
+            inv.Show();
+        }
     }
 }
