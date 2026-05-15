@@ -4,7 +4,7 @@
         Title="Inventory" Height="550" Width="450"
         Background="#2b1a12" WindowStyle="None" AllowsTransparency="True">
     <Grid>
-        <Border Background="#2b1a12" CornerRadius="10">
+        <Border x:Name="MainInventoryBorder" Background="#2b1a12" CornerRadius="10">
             <Grid Margin="10">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="Auto"/>
@@ -23,15 +23,15 @@
                     <Button Grid.Column="1" Content="✕" Foreground="White" Background="Transparent" BorderThickness="0" FontSize="18" Cursor="Hand" Click="CloseWindow" Width="30"/>
                 </Grid>
 
-                <StackPanel Grid.Row="1" Orientation="Horizontal" Margin="70,15,40,10">
-                    <Border Background="#3a2418" BorderBrush="Orange" BorderThickness="1" Padding="10,5" Margin="5" Width="184">
+                <StackPanel x:Name="InfoStackPanel" Grid.Row="1" Orientation="Horizontal" Margin="70,15,40,10">
+                    <Border x:Name="MoneyBorder" Background="#3a2418" BorderBrush="Orange" BorderThickness="1" Padding="10,5" Margin="5" Width="184">
                         <StackPanel Orientation="Horizontal">
-                            <TextBlock Text="14,633,098" Foreground="Yellow" Margin="5,0"/>
+                            <TextBlock x:Name="MoneyText" Text="14,633,098" Foreground="Yellow" Margin="5,0"/>
                         </StackPanel>
                     </Border>
-                    <Border BorderBrush="Orange" BorderThickness="1" Background="#3a2418" Padding="10,5" Margin="5" Width="107">
+                    <Border x:Name="SlotsBorder" BorderBrush="Orange" BorderThickness="1" Background="#3a2418" Padding="10,5" Margin="5" Width="107">
                         <StackPanel Orientation="Horizontal">
-                            <TextBlock Text="56/80" Foreground="Red" Margin="5,0"/>
+                            <TextBlock x:Name="SlotsText" Text="56/80" Foreground="Red" Margin="5,0"/>
                         </StackPanel>
                     </Border>
                 </StackPanel>
@@ -173,7 +173,7 @@
                 </UniformGrid>
 
                 <Button Grid.Row="4" Content="НАЗАД" Click="BackToMain" Height="35" Width="100" HorizontalAlignment="Left" Margin="156,106,0,19" Background="#D62F1B" Foreground="White"/>
-                <Image Source="/Image/goldd.png" Height="30" Width="30" Margin="40,20,365,16" Grid.Row="1"/>
+                <Image Source="/Image/goldd.png" Height="30" Width="30" Margin="40,20,365,16" Grid.Row="1" MouseLeftButtonDown="OnGoldClicked"/>
             </Grid>
         </Border>
     </Grid>
